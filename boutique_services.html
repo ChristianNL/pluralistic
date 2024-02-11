@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Produits</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Pluralistic</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Acceuil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">A Propos</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Boutique</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Nouvelles Arrivées</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item active" href="boutique_services.html">Nos Services</a></li>
+                            <li><a class="dropdown-item" href="boutique_produits.html">Nos Produits</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a class="btn btn-outline-dark d-sm-flex justify-content-sm-center me-sm-3" type="submit" href="form_ inscription.html">
+                        <i class="bi-cart-fill me-1"></i>
+                        Inscrisption
+                    </a>
+                    <a class="btn btn-outline-dark d-sm-flex justify-content-sm-center" type="submit" href="form_ connexion.html">
+                        <i class="bi-cart-fill me-1"></i>
+                        Connexion
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Nos Services</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Découvrez tous nos services.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nos services-->
+    <section class="bg-light py-5 border-bottom">
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">Nos Services</h2>
+                <a class="text-decoration-none" href="#!">
+                    Explorez tous nos services
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <!-- Broderie-->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="card mb-5 mb-xl-0">
+                        <div class="card-body p-5">
+                            <div class="fw text-uppercase fw-bold">Broderie</div>
+                            <div class="small text-uppercase fw-bold">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                .....
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Polo
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur T-Shirt
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Tissu Pagnes
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Chaussures
+                                </li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">En savoir plus</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Impression-->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="card mb-5 mb-xl-0">
+                        <div class="card-body p-5">
+                            <div class="fw text-uppercase fw-bold">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                Impressions
+                            </div>
+                            <div class="small text-uppercase fw-bold">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                .....
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Vinyle
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Bache
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Textile
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    sur Micro-perforé
+                                </li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">En savoir plus</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; MANI Entreprises 2024</p></div>
+    </footer>
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

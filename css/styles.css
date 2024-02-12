@@ -106,6 +106,13 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.logo {
+  width: 60;
+  height: 50;
+  display: block;
+  margin-right: 5px;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -3742,8 +3749,8 @@ textarea.form-control-lg {
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(0, 200, 0, 0.9);
-  --bs-navbar-brand-hover-color: rgba(0, 200, 0, 0.9);
+  --bs-navbar-brand-color: rgba(0, 150, 63, 0.9);
+  --bs-navbar-brand-hover-color: rgba(0, 150, 63, 0.9);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -3779,12 +3786,13 @@ textarea.form-control-lg {
   margin-right: var(--bs-navbar-brand-margin-end);
   font-size: var(--bs-navbar-brand-font-size);
   color: var(--bs-navbar-brand-color);
+  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
-  filter: brightness(1.8);
+  filter: brightness(1.5);
 }
 
 .navbar-nav {

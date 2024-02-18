@@ -8,12 +8,14 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
+            <img src="assets/logo.svg" class="logo" alt="">
             <a class="navbar-brand" href="index.html">Pluralistic</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -23,21 +25,20 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Boutique</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Nouvelles Arrivées</a></li>
-                            <li><hr class="dropdown-divider" /></li>
                             <li><a class="dropdown-item active" href="boutique_services.html">Nos Services</a></li>
+                            <li><hr class="dropdown-divider" /></li>
                             <li><a class="dropdown-item" href="boutique_produits.html">Nos Produits</a></li>
                         </ul>
                     </li>
                 </ul>
                 <form class="d-flex">
                     <a class="btn btn-outline-dark d-sm-flex justify-content-sm-center me-sm-3" type="submit" href="form_ inscription.html">
-                        <i class="bi-cart-fill me-1"></i>
-                        Inscrisption
+                        <i class="me-1"></i>
+                        S'abonner
                     </a>
                     <a class="btn btn-outline-dark d-sm-flex justify-content-sm-center" type="submit" href="form_ connexion.html">
-                        <i class="bi-cart-fill me-1"></i>
-                        Connexion
+                        <i class="me-1"></i>
+                        Se Connecter
                     </a>
                 </form>
             </div>
@@ -45,7 +46,7 @@
     </nav>
 
     <!-- Header-->
-    <header class="bg-dark py-5">
+    <header class="my-bg-green py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Nos Services</h1>
@@ -55,88 +56,148 @@
     </header>
 
     <!-- Nos services-->
-    <section class="bg-light py-5 border-bottom">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Nos Services</h2>
-                <a class="text-decoration-none" href="#!">
-                    Explorez tous nos services
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="row gx-5 justify-content-center">
-                <!-- Broderie-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="fw text-uppercase fw-bold">Broderie</div>
-                            <div class="small text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                .....
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Polo
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur T-Shirt
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Tissu Pagnes
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Chaussures
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">En savoir plus</a></div>
+    <section class="features-icons bg-light text-center">
+        <div class="">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <img src="assets/icons8-produit-96.png" alt="">
                         </div>
+                        <h3>Commerce generale</h3>
+                        <p class="lead mb-0">Explorez un univers de produits variés et de qualité grâce à 
+                            notre service de <strong>Broderie, d'Impression et de Serigraphie !</strong></p>
+                        <a class="text-decoration-none" href="boutique_produits.html">
+                            Explorez nos produits
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- Impression-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="fw text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                Impressions
-                            </div>
-                            <div class="small text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                .....
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Vinyle
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Bache
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Textile
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    sur Micro-perforé
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">En savoir plus</a></div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <img src="assets/icons8-prestations-de-service-96.png" alt="">
                         </div>
+                        <h3>Prestation de services</h3>
+                        <p class="lead mb-0">Nous dépassons vos attentes avec notre service de prestation, 
+                            offrant des solutions personnalisées pour répondre 
+                            à vos besoins spécifiques.</p>
+                        <a class="text-decoration-none" href="">
+                            En savoir plus
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('images/impression_sur_polo.jpg')"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Imprimerie Offset</h2>
+                    <p class="lead mb-0">Notre service d'imprimerie offset repose sur une technologie avancée pour produire
+                     des impressions de haute qualité et d'une netteté exceptionnelle. Que ce soit pour des brochures, des 
+                     affiches ou d'autres supports, notre expertise en impression offset assure une reproduction 
+                     fidèle et professionnelle de vos documents.</p>
+                    <a class="text-decoration-none" href="">
+                        En savoir plus
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('images/WhatsApp\ Image\ 2024-02-16\ à\ 08.22.12_d16f89b3.jpg')"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Confection Textile</h2>
+                    <p class="lead mb-0">Explorez l'alliance entre qualité et style avec notre service de confection
+                         textile. Nous créons des pièces uniques, personnalisées selon vos besoins, garantissant non
+                          seulement un ajustement parfait mais également une représentation visuelle exceptionnelle 
+                          de votre marque à travers des vêtements de qualité supérieure.</p>
+                    <a class="text-decoration-none" href="">
+                        En savoir plus
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('images/WhatsApp\ Image\ 2024-02-16\ à\ 08.22.19_9193cd14.jpg')"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Broderie Industrielle</h2>
+                    <p class="lead mb-0">Ajoutez une touche d'élégance à vos produits avec notre service de broderie 
+                        industrielle. Nos machines de pointe transforment vos logos et designs en broderies raffinées, offrant
+                         durabilité et esthétique. Que ce soit sur des uniformes, des articles promotionnels ou des textiles, 
+                         la broderie industrielle crée une impression inoubliable.</p>
+                    <a class="text-decoration-none" href="">
+                        En savoir plus
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('images/WhatsApp\ Image\ 2024-02-16\ à\ 08.22.12_d16f89b3.jpg')"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Serigraphie Moderne</h2>
+                    <p class="lead mb-0">Notre service de sérigraphie moderne apporte une dimension artistique à vos 
+                        créations. Grâce à des techniques avancées, nous produisons des designs vibrants et durables 
+                        sur une variété de surfaces. Des impressions accrocheuses sur textiles aux affiches percutantes,
+                         la sérigraphie moderne donne vie à vos idées avec éclat et précision.</p>
+                    <a class="text-decoration-none" href="">
+                        En savoir plus
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; MANI Entreprises 2024</p></div>
+    <footer class="site-footer my-bg-green">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="logo">
+                        <h6>pluralistic communication</h6>
+                    </div>
+                    <p class="text-justify">Votre partenaire d'impression et de sérigraphie de confiance. Nous sommes fiers de fournir des solutions d'impression haut de gamme adaptées à vos besoins professionnels. Notre équipe dévouée utilise des technologies de pointe pour offrir une qualité exceptionnelle, que ce soit pour des impressions sur papier, textiles ou tout autre support. Avec une attention méticuleuse aux détails et un engagement envers la satisfaction client, nous sommes là pour concrétiser vos idées en créations tangibles. Découvrez l'efficacité et la créativité de nos services d'impression et sérigraphie.</p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <h6>Contactez-nous</h6>
+                    <ul class="footer-links">
+                        <li><a class="whatsapp" href="#"><i class="bi-whatsapp fs-6"></i> +237 696 63 74 20</a></li>
+                        <li><a class="whatsapp" href="#"><i class="bi-whatsapp fs-6"></i> +237 621 14 87 10</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <h6>Liens Utiles </h6>
+                    <ul class="footer-links">
+                        <li><a href="">Acceuil</a></li>
+                        <li><a href="">A Propos</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Produits</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by MANI Entreprises</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="bi-facebook fs-3"></i></a></li>
+                        <li><a class="telegram" href="#"><i class="bi-telegram fs-3"></i></a></li>
+                        <li><a class="whatsapp" href="#"><i class="bi-whatsapp fs-3"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="bi-linkedin fs-3"></i></a></li>   
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
     
     <!-- Bootstrap core JS-->

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Incluez cette fonction dans votre fichier JavaScript
     function redirectToDashboard() {
-        window.location.href = "dashbord.html";
+        window.location.href = "AdminSpace/dashbord.html";
     }
 
 });

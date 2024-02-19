@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Produit</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="css/new_poduct.css">
+    <script src="js/new_product.js"></script>
+</head>
+<body>
+
+    <div id="form-main">
+        <div id="form-div">
+            <form class="form" id="productForm">
+                <h2>Ajouter un nouveau produit</h2>
+                
+                <p class="name">
+                    <input name="productName" type="text" class="validate[required] feedback-input" placeholder="Nom du produit" id="productName" />
+                    <span id="productName-error"></span>
+                </p>
+
+                <p class="price">
+                    <input name="productPrice" type="text" class="validate[required,custom[number]] feedback-input" placeholder="Prix" id="productPrice" />
+                    <span id="productPrice-error"></span>
+                </p>
+
+                <p class="image">
+                    <input name="productImage" type="file" accept="image/*" class="validate[required]" id="productImage" />
+                    <span id="productImage-error"></span>
+                </p>
+
+                <p class="description">
+                    <textarea name="productDescription" class="validate[required,length[6,300]] feedback-input" id="productDescription" placeholder="Description"></textarea>
+                    <span id="productDescription-error"></span>
+                </p>
+
+                <div class="submit">
+                    <input type="submit" value="Ajouter le Produit" id="button-blue"/>
+                    <div class="ease"></div>
+                </div>
+
+                <a href="" class="back-button">Retour</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/new_product.js"></script>
+</body>
+</html>

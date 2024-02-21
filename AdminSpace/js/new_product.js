@@ -3,9 +3,32 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Validation du formulaire
     productForm.addEventListener("submit", function(event) {
+        event.preventDefault();
         if (!validateProductForm()) {
-            event.preventDefault();
+            // Renommage du fichier avec le nom du produit
+            renameImageWithProductName();
+            return;
         }
+
+        // Créer un objet FormData pour envoyer les données au serveur
+        var formData = new FormData(productForm);
+
+        // Effectuer une requête AJAX pour soumettre le formulaire
+        var req = new XMLHttpRequest();
+        req.open("POST", "save_product.php", true);
+        req.onload = function () {
+            if (req.status === 200) {
+                // Afficher la réponse du serveur
+                alert(req.responseText);
+ 
+                // Rediriger vers la page précédente après l'enregistrement
+                window.location.href = document.referrer;
+            } else {
+                alert("Erreur lors de la soumission du formulaire.");
+            }
+        };
+        
+        req.send(formData);
     });
 
     // Validation des champs
@@ -85,8 +108,18 @@ document.addEventListener("DOMContentLoaded", function() {
             productDescriptionError.textContent = "";
         }
 
-        console.log("success");
+        console.log('success');
         return isValid;
+    }
+
+    // Fonction pour renommer le fichier image avec le nom du produit
+    function renameImageWithProductName() {
+        var productNameInput = document.getElementById("productName");
+        var productImageInput = document.getElementById("productImage");
+
+        // Renommage du fichier avec le nom du produit
+        var fileName = productNameInput.value.replace(/\s+/g, '_').toLowerCase();
+        productImageInput.files[0].name = fileName + getFileExtension(productImageInput.files[0].name);
     }
 
     // Fonction pour obtenir l'extension du fichier
@@ -94,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
     }
 
-    // Gestion du lien "Retour"
+    // Action du lien "Retour"
     var backButton = document.querySelector(".back-button");
     backButton.addEventListener("click", function() {
         // Redirection vers la page précédente

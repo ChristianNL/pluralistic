@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const inputs = {
     name: document.getElementById('name'),
     surname: document.getElementById('surname'),
+    ville: document.getElementById('ville'),
     email: document.getElementById('email'),
     phone: document.getElementById('phone'),
     WhatsAppNumber: document.getElementById("WhatsAppNumber"),

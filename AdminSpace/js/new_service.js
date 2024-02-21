@@ -87,8 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
             commentError.style.color = "red";
             commentError.style.fontSize= "14px";
             isValid = false;
-        } else if (commentInput.value.length > 125) {
-            commentError.textContent = "La description ne doit pas dépasser 125 caractères.";
+        } else if (commentInput.value.length > 150) {
+            commentError.textContent = "La description ne doit pas dépasser 150 lettres.";
             commentError.style.color = "red";
             commentError.style.fontSize= "14px";
             isValid = false;

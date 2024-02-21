@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form id="form" action="/" method="post">
+        <form id="form" action="AdminSpace/save_subscriber.php" method="post">
             <div class="inscription justify-content-center">
                 <img src="assets/logo.svg" class="logo" alt="">
                 <h1>S'abonner a Pluralistic</h1>
@@ -23,6 +23,11 @@
             <div class="input-control">
                 <label for="Surname">Prénom</label>
                 <input id="surname" name="surname" type="text" placeholder="Entrer votre Prénom. Ex : Carine">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="Ville">Ville</label>
+                <input id="ville" name="Ville" type="text" placeholder="Entrer votre ville. Ex : Douala">
                 <div class="error"></div>
             </div>
             <div class="input-control">
@@ -41,7 +46,7 @@
                 <div class="error"></div>
             </div>
             <div class="btn-container">
-                <a href="index.html">revenir a l'acceuil</a>
+                <a href="index.php">revenir a l'acceuil</a>
                 <button type="submit" id="submit-btn">Envoyer</button>
             </div>
         </form>

@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         echo "Produit enregistré avec succès.";
+        header("Location: all_product.php")
     } else {
         echo "Erreur lors de l'enregistrement du produit : " . $stmt->error;
     }

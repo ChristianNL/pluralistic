@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Exécution de la requête
     if ($stmt->execute()) {
         echo "Le service a été ajouté avec succès.";
+        header("Location: all_service.php");
     } else {
         echo "Erreur lors de l'ajout du service : " . $stmt->error;
     }

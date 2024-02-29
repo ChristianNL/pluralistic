@@ -1,31 +1,41 @@
 <?php
-// Inclure le fichier de connexion à la base de données
 include_once("db.php");
 
-// Récupérer les données du formulaire
-$username = $_POST['username'];
-$password = $_POST['password'];
+$error_msg = "";
 
-// Préparer la requête SQL
-$sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// Préparer et exécuter la requête en utilisant des déclarations préparées pour éviter les injections SQL
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $username, $password);
+    if ($username != "" && $password != "") {
+        $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
 
-// Exécuter la requête
-$stmt->execute();
-
-// Vérifier s'il y a une correspondance dans la base de données
-$result = $stmt->get_result();
-if ($result->num_rows > 0) {
-    echo "Connexion réussie. Redirection vers le tableau de bord...";
-    // Vous pouvez ajouter le code de redirection vers le tableau de bord ici
-} else {
-    echo "Identifiants incorrects. Veuillez réessayer.";
+        if ($row) {
+            // Vérifier si le mot de passe est correct
+            if ($password == $row['password']) {
+                echo "Success";
+                header("Location: dashbord.html");
+            } else {
+                $error_msg = "Mot de passe incorrect.";
+            }
+        } else {
+            $error_msg = "Nom d'utilisateur incorrect.";
+        }
+    }
 }
 
-// Fermer la connexion et la déclaration
-$stmt->close();
 $conn->close();
+?>
+
+<?php
+if ($error_msg != "") {
+    ?>
+    <script>alert("erreur : <?php echo $error_msg; ?>")</script>
+    <?php
+    header("Location: ../form_ connexion.html");
+}
 ?>

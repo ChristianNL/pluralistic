@@ -9,21 +9,40 @@ document.addEventListener('DOMContentLoaded', function () {
     WhatsAppNumber: document.getElementById("WhatsAppNumber"),
   };
 
-  form.addEventListener('submit', e => {
+  /*form.addEventListener('submit', e => {
     e.preventDefault();
     if (validateInputs()) {
       // Supprimer les espaces avant d'enregistrer le numéro
       const cleanedPhone = inputs.phone.value.replace(/\s/g, '');
       const cleanedWhatsAppNumber = inputs.WhatsAppNumber.value.replace(/\s/g, '');
 
-      window.alert(`Validation réussie! Numéro de téléphone: ${cleanedPhone}, WhatsApp: ${cleanedWhatsAppNumber}`);
+      //window.alert(`Validation réussie! Numéro de téléphone: ${cleanedPhone}, WhatsApp: ${cleanedWhatsAppNumber}`);
       window.history.back();
     } else {
       window.alert('Certains champs sont invalides. Veuillez réessayer.');
     }
-  });
+  });*/
 
-  form.addEventListener('input', validateForm);
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (!validateInputs()) {
+      return;
+    }
+
+    var formData = new FormData(form);
+    var req = new XMLHttpRequest();
+    req.open("POST", "save_subscriber.php", true);
+    req.onload = function () {
+      if (req.status === 200) {
+        alert(req.responseText);
+        window.history.back();
+      } else {
+        alert("erreur lors de la soumission du formulaire : " + req.statusText);
+      }
+    };
+
+    req.send(formData);
+  });
 
   function validateForm() {
     Object.keys(inputs).forEach(inputId => {

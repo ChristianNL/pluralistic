@@ -12,7 +12,7 @@ div#carousel-1 {
     transition: 1s; 
   } 
   figure#spinner img { 
-    width: 65%; 
+    width: 100%; 
     max-width: 600px; 
     position: absolute; 
     left: 25%;
@@ -21,13 +21,8 @@ div#carousel-1 {
   }
   figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
   }
-  figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
-  figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
-  figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
-  figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
-  figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
-  figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
-  figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
+  figure#spinner img:nth-child(2) { transform: rotateY(-120deg); }
+  figure#spinner img:nth-child(3) { transform: rotateY(-240deg); }
   div#carousel-1 ~ span { 
     color: #000; 
     margin: 5%; 
@@ -89,8 +84,8 @@ div#carousel-1 {
 
 
     /* -------- THIRD CAROUSSEL ---------*/
-    div#carousel-3 { 
-        perspective: 1200px;
+  div#carousel-3 { 
+        perspective: 900px;
         padding-top: 20%; 
         font-size:0; 
         margin-bottom: 3rem; 
@@ -106,7 +101,7 @@ div#carousel-1 {
     width: 65%; 
     max-width: 600px; 
     position: absolute; 
-    left: 15%;
+    left: 25%;
     transform-origin: 50% 50% -500px;
     outline:1px solid transparent; 
   }
@@ -121,7 +116,7 @@ div#carousel-1 {
   figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
   div#carousel-3 ~ span { 
     color: #000; 
-    margin: 5%; 
+    margin: 15%; 
     display: inline-block; 
     text-decoration: none; 
     font-size: 2rem; 

@@ -5,9 +5,9 @@ var angle2 = 0;
 function galleryspin_1(sign) { 
     spinner = document.querySelector("#spinner");
     if (!sign) { 
-        angle = angle + 45; 
+        angle = angle + 120; 
     } else { 
-        angle = angle - 45; 
+        angle = angle - 120; 
     }
     spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
 }
@@ -22,7 +22,7 @@ function carousselgalleryspin(sign) {
     spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
 }
 
-function galleryspinThird(sign) { 
+function galleryspin_2(sign) { 
     spinner = document.querySelector("#spinner-3");
     if (!sign) { 
         angle3 = angle3 + 45; 

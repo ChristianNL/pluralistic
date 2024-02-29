@@ -5,11 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     productForm.addEventListener("submit", function(event) {
         event.preventDefault();
         if (!validateProductForm()) {
-            // Renommage du fichier avec le nom du produit
-            renameImageWithProductName();
             return;
         }
 
+        renameImageWithProductName();
         // Créer un objet FormData pour envoyer les données au serveur
         var formData = new FormData(productForm);
 

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- META Tags for SEO -->
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="author" content="Pluralistic Communication, MANI Entreprises">
+        
         <title>Pluralistic - Abonnes</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -121,6 +125,7 @@
                                             <th>Numero de telephone</th>
                                             <th>Numero whatsapp</th>
                                             <th>Date d'enregistrement</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -132,6 +137,7 @@
                                             <th>Numero de telephone</th>
                                             <th>Numero whatsapp</th>
                                             <th>Date d'enregistrement</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>                                    
@@ -143,7 +149,8 @@
                                             while ($row = $result -> fetch_assoc()) {
                                                 echo "<tr><td>". $row['nom']. "</td><td>". $row['prenom']. "</td><td>". $row['ville']. "</td><td>".
                                                 $row['mail']. "</td><td>". $row['tel']. "</td><td>". $row['whatsapp'] ."</td><td>".
-                                                $row['date_enr']. "</td></tr>";
+                                                $row['date_enr']. "</td>";
+                                                echo "<td><button onclick='deleteSubscriber(\"" . $row['nom'] . "\")'>Supprimer</button></td></tr>";
                                             }
                                             echo "</table>";
                                         } else {
@@ -152,6 +159,23 @@
 
                                         $conn->close();
                                         ?>
+
+                                        <script>
+                                            function deleteSubscriber(nomSubscriber) {
+                                                if (confirm("Êtes-vous sûr de vouloir supprimer ce service ?")) {
+                                                    var xhr = new XMLHttpRequest();
+                                                    xhr.open("POST", "delete_subscriber.php", true);
+                                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                    xhr.onreadystatechange = function() {
+                                                        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                                                            alert(this.responseText);
+                                                            window.location.reload();
+                                                        }
+                                                    };
+                                                    xhr.send("nomSubscriber=" + nomSubscriber);
+                                                }
+                                            }
+                                        </script>
                                     </tbody>
                                 </table>
                             </div>

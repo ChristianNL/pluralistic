@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- META Tags for SEO -->
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="author" content="Pluralistic Communication, MANI Entreprises">
+        
         <title>Pluralistic - Services</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -117,6 +121,7 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Date d'enregistrement</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -124,6 +129,7 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Date d'enregistrement</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>                                    
@@ -134,7 +140,8 @@
                                         if ($result -> num_rows > 0) {
                                             while ($row = $result -> fetch_assoc()) {
                                                 echo "<tr><td>". $row['nom_service']. "</td><td>". $row['service_desc']. "</td><td>".
-                                                $row['date_enr']. "</td></tr>";
+                                                $row['date_enr']. "</td>";
+                                                echo "<td><button onclick='deleteService(\"" . $row['nom_service'] . "\")'>Supprimer</button></td></tr>";
                                             }
                                             echo "</table>";
                                         } else {
@@ -143,6 +150,23 @@
 
                                         $conn->close();
                                         ?>
+
+                                        <script>
+                                            function deleteService(nomService) {
+                                                if (confirm("Êtes-vous sûr de vouloir supprimer ce service ?")) {
+                                                    var xhr = new XMLHttpRequest();
+                                                    xhr.open("POST", "delete_service.php", true);
+                                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                    xhr.onreadystatechange = function() {
+                                                        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                                                            alert(this.responseText);
+                                                            window.location.reload();
+                                                        }
+                                                    };
+                                                    xhr.send("nomService=" + nomService);
+                                                }
+                                            }
+                                        </script>
                                     </tbody>
                                 </table>
                             </div>

@@ -1,5 +1,5 @@
 #gallery {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 @media screen and (min-width: 991px) {
   #gallery {
@@ -16,7 +16,7 @@
 }
 
 .img-overlay {
-  background: rgba(0, 200, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -28,12 +28,12 @@
   opacity: 0;
 }
 .img-overlay i {
-  color: rgb(0, 200, 50);
+  color: #fff;
   font-size: 3em;
 }
 
 #overlay {
-  background: rgba(0, 200, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -51,7 +51,7 @@
 #overlay img {
   margin: 0;
   width: 80%;
-  height: auto;
+  height: 80%;
   object-fit: contain;
   padding: 5%;
 }
@@ -67,7 +67,7 @@
 }
 
 #nextButton {
-  color: rgb(0, 200, 50);
+  color: #fff;
   font-size: 2em;
   transition: opacity 0.8s;
 }
@@ -81,7 +81,7 @@
 }
 
 #prevButton {
-  color: rgb(0, 200, 50);
+  color: #fff;
   font-size: 2em;
   transition: opacity 0.8s;
 }
@@ -95,7 +95,7 @@
 }
 
 #exitButton {
-  color: rgb(0, 200, 50);
+  color: #fff;
   font-size: 2em;
   transition: opacity 0.8s;
   position: absolute;
@@ -112,3 +112,46 @@
 }
 
 /*# sourceMappingURL=gallery.css.map */
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Pagination pour les écrans de bureau */
+.pagination.desktop li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* Pagination pour les appareils mobiles */
+.pagination.mobile li {
+  display: none;
+}
+
+.pagination.mobile .page-item.active, 
+.pagination.mobile .page-item:last-child, 
+.pagination.mobile .page-item:first-child, 
+.pagination.mobile .page-item:nth-child(2), 
+.pagination.mobile .page-item:nth-last-child(2), 
+.pagination.mobile .page-item:nth-last-child(1) {
+  display: inline-block;
+}
+
+.pagination.mobile .page-item:not(.active) {
+  display: none;
+}
+
+.pagination.mobile .page-item.active ~ .page-item:not(.last-page), 
+.pagination.mobile .page-item.active ~ .ellipsis {
+  display: inline-block;
+}
+
+.pagination.mobile .ellipsis {
+  display: none;
+}
+
+.pagination.mobile .ellipsis:before, 
+.pagination.mobile .ellipsis:after {
+  content: "\2026";
+}

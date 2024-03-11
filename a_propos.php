@@ -305,6 +305,28 @@
                 ?>
         </div>
     </section>
+
+    <!-- Localisation -->
+    <section id="gallery bg-light">
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+            </div>
+            <div class="col-lg-9 justify-content-center">
+                <div id="map" style="height: 400px; width: 100%;"></div>
+                
+                <script>
+                    var map = L.map('map').setView([3.861250, 11.524583], 15); // Coordonnées lat, long, niveau de zoom
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OpenStreetMap contributors'
+                    }).addTo(map);
+
+                    var marker = L.marker([3.861250, 11.524583]).addTo(map);
+                    marker.bindPopup("<b>Ma boutique</b>").openPopup();
+                </script>
+            </div>
+        </div>
+    </section>
     
     <!-- Footer-->
     <footer class="site-footer my-bg-green">

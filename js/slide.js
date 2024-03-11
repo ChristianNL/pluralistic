@@ -15,9 +15,9 @@ function galleryspin_1(sign) {
 function carousselgalleryspin(sign) { 
     spinner = document.querySelector("#spinner-2");
     if (!sign) { 
-        angle = angle + 60; 
+        angle = angle + 120; 
     } else { 
-        angle = angle - 60; 
+        angle = angle - 120; 
     }
     spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
 }

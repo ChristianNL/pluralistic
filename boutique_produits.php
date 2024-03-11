@@ -88,27 +88,31 @@
 
                 $output = "";
 
-                if ($result -> num_rows > 0) {
-                    while ($row = $result -> fetch_assoc()) {
+                if ($result) {
+                    if ($result -> num_rows > 0) {
+                        while ($row = $result -> fetch_assoc()) {
 
-                        $output .= "<div class='col mb-5'>
-                            <div class='card h-100'>
-                                <img class='card-img-top' src='AdminSpace/" . $row['image_path'] . "' alt='image produit'/>
-                                <div class='card-body p-4'>
-                                <div class='text-center'>
-                                    <h5 class='fw-bolder'>" . $row['nom_produit'] . "</h5>
-                                    XAF " . $row['prix_produit'] . "
+                            $output .= "<div class='col mb-5'>
+                                <div class='card h-100'>
+                                    <img class='card-img-top' src='AdminSpace/" . $row['image_path'] . "' alt='image produit'/>
+                                    <div class='card-body p-4'>
+                                    <div class='text-center'>
+                                        <h5 class='fw-bolder'>" . $row['nom_produit'] . "</h5>
+                                        XAF " . $row['prix_produit'] . "
+                                    </div>
+                                    </div>
+                                    <div class='card-footer p-4 pt-0 border-top-0 bg-transparent'>
+                                    <div class='text-center'>
+                                        <button class='btn btn-outline-dark mt-auto addToCart' data-product='" . $row['nom_produit'] . "' data-price='" . $row['prix_produit'] . "'>
+                                        Ajouter au panier
+                                        </button>
+                                    </div>
+                                    </div>
                                 </div>
-                                </div>
-                                <div class='card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                                <div class='text-center'>
-                                    <button class='btn btn-outline-dark mt-auto addToCart' data-product='" . $row['nom_produit'] . "' data-price='" . $row['prix_produit'] . "'>
-                                    Ajouter au panier
-                                    </button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>";
+                                </div>";
+                        }
+                    } else {
+                        $output = "<p></p>";
                     }
                 } else {
                     $output = "<p></p>";

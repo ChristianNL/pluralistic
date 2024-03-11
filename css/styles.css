@@ -8422,7 +8422,7 @@ textarea.form-control-lg {
 
 .my-bg-green {
   --bs-bg-opacity: 1;
-  background-color: rgba(0, 150, 63, var(--bs-bg-opacity)) !important;
+  background-color: rgba(0, 200, 30, var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {

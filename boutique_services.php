@@ -122,23 +122,27 @@
                     $whatsappNumber = "+237696637420";
                     $currentIcon = 0;
 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            // Bloc HTML pour chaque service
-                            $serviceName = $row['nom_service'];
-                            $serviceDesc = $row['service_desc'];
-                            // Sélectionne le nom d'icône à utiliser pour ce service.
-                            $iconName = $icons[$currentIcon];
-                            $currentIcon = ($currentIcon + 1) % count($icons); // Incrémente et boucle dans la liste des icônes
+                    if ($result) {
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Bloc HTML pour chaque service
+                                $serviceName = $row['nom_service'];
+                                $serviceDesc = $row['service_desc'];
+                                // Sélectionne le nom d'icône à utiliser pour ce service.
+                                $iconName = $icons[$currentIcon];
+                                $currentIcon = ($currentIcon + 1) % count($icons); // Incrémente et boucle dans la liste des icônes
 
-                            $output .= "<div class='col-lg-4'>";
-                            $output .= "<div class='features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3'>";
-                            $output .= "<div class='features-icons-icon d-flex'><img src='assets/".$iconName."' alt='icon'></div>";
-                            $output .= "<h3>".$serviceName."</h3>";
-                            $output .= "<p class='lead mb-0'>".$serviceDesc."</p>";
-                            $output .= "<a class='text-decoration-none' href='whatsapp://send?phone=".$whatsappNumber."&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20"
-                                .$serviceName.".%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F' target='_blank'>En savoir plus <i class='bi bi-arrow-right'></i></a>";
-                            $output .= "</div></div>";
+                                $output .= "<div class='col-lg-4'>";
+                                $output .= "<div class='features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3'>";
+                                $output .= "<div class='features-icons-icon d-flex'><img src='assets/".$iconName."' alt='icon'></div>";
+                                $output .= "<h3>".$serviceName."</h3>";
+                                $output .= "<p class='lead mb-0'>".$serviceDesc."</p>";
+                                $output .= "<a class='text-decoration-none' href='whatsapp://send?phone=".$whatsappNumber."&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20"
+                                    .$serviceName.".%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F' target='_blank'>En savoir plus <i class='bi bi-arrow-right'></i></a>";
+                                $output .= "</div></div>";
+                            }
+                        } else {
+                            $output = "<p></p>";
                         }
                     } else {
                         $output = "<p></p>";

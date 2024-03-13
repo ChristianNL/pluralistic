@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique - Produits</title>
+    <title>Nos Services</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/slider.css" rel="stylesheet" />
+    <link href="css/slide_1_style.css" rel="stylesheet" />
+    <link href="css/slide_2_style.css" rel="stylesheet" />
+    <link href="css/card_service.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
 
     
@@ -157,88 +160,125 @@
             </div>
         </div>
     </section>
-    
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img">
-                    <div id="carousel-1">
-                        <figure id="spinner">
-                            <img src="assets/images/imprimerie_1.jpg" alt>
-                            <img src="assets/images/imprimerie_2.jpg" alt>
-                            <img src="assets/images/imprimerie_3.jpg" alt>
-                        </figure>
+
+    <section class="features-icons text-center">
+        <div class="">
+            <div class="row justify-content-center">
+                <div class="my-card col-lg-4 col-md-6 mx-3">
+                    <div class="slide-2-card">
+                        <img src="assets/images/broderie_1.jpg" class="card-image img-fluid">
+                        <p class="slide-2-title">
+                        <div class="card-content">
+                            <span class="card-title">
+                                Broderie Industrielle
+                            </span>
+
+                            <p class="card-desc">
+                                Découvrez l'élégance haut de gamme de notre service de broderie industrielle.
+                                Nous apportons des solutions textiles créatives et personnalisées pour sublimer vos vêtements
+                                et produits. Nos designs de broderie sont soigneusement exécutés sur une variété de matériaux
+                                de haute qualité, garantissant ainsi un résultat durable et de haute qualité.
+                            </p>
+
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                                En savoir plus
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                        </p>
                     </div>
-                    <span style="float:left" class="ss-icon" onclick="galleryspin_1('-')">&lt;</span>
-                    <span style="float:right" class="ss-icon" onclick="galleryspin_1('')">&gt;</span>
                 </div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Imprimerie Offset</h2>
-                    <p class="lead mb-0">Notre service d'imprimerie offset repose sur une technologie avancée pour produire
-                     des impressions de haute qualité et d'une netteté exceptionnelle. Que ce soit pour des brochures, des 
-                     affiches ou d'autres supports, notre expertise en impression offset assure une reproduction 
-                     fidèle et professionnelle de vos documents.</p>
-                    <a class="text-decoration-none" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20d%27Imprimerie%20Offset.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
-                        En savoir plus
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 text-white showcase-img">
-                    <div id="carousel-2">
-                        <figure id="spinner-2">
-                            <img src="assets/images/confection_textile_1.jpg" alt>
-                            <img src="assets/images/confection_textile_2.jpg" alt>
-                            <img src="assets/images/confection_textile_3.jpg" alt>
-                        </figure>
+
+                <div class="my-card col-lg-4 col-md-6">
+                    <div class="slide-2-card">
+                        <img src="assets/images/serigraphie-1.jpg" class="card-image img-fluid">
+                        <p class="slide-2-title">
+                        <div class="card-content">
+                            <span class="card-title">
+                                Serigraphie Moderne
+                            </span>
+
+                            <p class="card-desc">
+                                Notre service de sérigraphie moderne apporte une dimension artistique à vos
+                                créations. Grâce à des techniques avancées, nous produisons des designs vibrants et durables
+                                sur une variété de surfaces. Des impressions accrocheuses sur textiles aux affiches percutantes,
+                                la sérigraphie moderne donne vie à vos idées avec éclat et précision.
+                            </p>
+
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                                En savoir plus
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                        </p>
                     </div>
-                    <span style="float:left" class="ss-icon" onclick="carousselgalleryspin('-')">&lt;</span>
-                    <span style="float:right" class="ss-icon" onclick="carousselgalleryspin('')">&gt;</span>
                 </div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Confection Textile</h2>
-                    <p class="lead mb-0">Explorez l'alliance entre qualité et style avec notre service de confection
-                         textile. Nous créons des pièces uniques, personnalisées selon vos besoins, garantissant non
-                          seulement un ajustement parfait mais également une représentation visuelle exceptionnelle 
-                          de votre marque à travers des vêtements de qualité supérieure.</p>
-                    <a class="text-decoration-none" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Confection%20Textile.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
-                        En savoir plus
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+
+                <div class="my-card col-lg-4 col-md-6">
+                    <div class="slide-2-card">
+                        <img src="assets/images/confection_textile_1.jpg" class="card-image img-fluid">
+                        <p class="slide-2-title">
+                        <div class="card-content">
+                            <span class="card-title">
+                                Confection Textile
+                            </span>
+
+                            <p class="card-desc">
+                                Explorez l'alliance entre qualité et style avec notre service de confection
+                                textile. Nous créons des pièces uniques, personnalisées selon vos besoins, garantissant non
+                                seulement un ajustement parfait mais également une représentation visuelle exceptionnelle
+                                de votre marque à travers des vêtements de qualité supérieure.
+                            </p>
+
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                                En savoir plus
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="row g-0">
-            <div class="col-lg-6 text-white order-lg-1 showcase-img" style="background-image: url('assets/images/broderie-4.jpg')"></div>
-                <div class="col-lg-6  my-auto showcase-text">
-                    <h2>Broderie Industrielle</h2>
-                    <p class="lead mb-0">Découvrez l'élégance haut de gamme de notre service de broderie industrielle. 
-                        Nous apportons des solutions textiles créatives et personnalisées pour sublimer vos vêtements 
-                        et produits. Nos designs de broderie sont soigneusement exécutés sur une variété de matériaux 
-                        de haute qualité, garantissant ainsi un résultat durable et de haute qualité. Faites confiance 
-                        à notre savoir-faire pour vous donner une apparence unique.</p>
-                    <a class="text-decoration-none" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
-                        En savoir plus
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/images/serigraphie-3.jpg')"></div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Serigraphie Moderne</h2>
-                    <p class="lead mb-0">Notre service de sérigraphie moderne apporte une dimension artistique à vos 
-                        créations. Grâce à des techniques avancées, nous produisons des designs vibrants et durables 
-                        sur une variété de surfaces. Des impressions accrocheuses sur textiles aux affiches percutantes,
-                         la sérigraphie moderne donne vie à vos idées avec éclat et précision.</p>
-                    <a class="text-decoration-none" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Serigraphie%20Moderne.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
-                        En savoir plus
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+
+                <div class="my-card col-lg-4 col-md-6">
+                    <div class="slide-2-card">
+                        <img src="assets/images/imprimerie_1.jpg" class="card-image img-fluid">
+                        <p class="slide-2-title">
+                        <div class="card-content">
+                            <span class="card-title">
+                                Imprimerie Offset
+                            </span>
+
+                            <p class="card-desc">
+                                Notre service d'imprimerie offset repose sur une technologie avancée pour produire
+                                des impressions de haute qualité et d'une netteté exceptionnelle. Que ce soit pour des brochures, des
+                                affiches ou d'autres supports, notre expertise en impression offset assure une reproduction
+                                fidèle et professionnelle de vos documents.
+                            </p>
+
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                                En savoir plus
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="row justify-content-center">
+        <p class="closing-sentence">Faites confiance à notre savoir-faire pour vous donner une apparence unique.</p>
+    </div>
+    
 
     <!-- Footer-->
     <footer class="site-footer my-bg-green">
@@ -292,5 +332,6 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/slide.js"></script>
+    <script src="js/slide_1_script.js"></script>
 </body>
 </html>

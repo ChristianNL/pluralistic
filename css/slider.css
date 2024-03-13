@@ -49,21 +49,22 @@ div#carousel-1 {
   figure#spinner-2 { 
     transform-style: preserve-3d; 
     height: 400px; 
-    transform-origin: 70% 70% -500px; 
+    transform-origin: 50% 50% -500px; 
     transition: 1s; 
   } 
   figure#spinner-2 img { 
     width: 65%; 
-    max-width: 600px; 
-    position: absolute; 
-    right: 25%;
+    max-width: 900px; 
+    position: relative; 
+    right: 5%;
+    left: 15%;
     transform-origin: 50% 50% -500px;
     outline:11px solid transparent; 
   }
   figure#spinner-2 img:nth-child(1) { transform:rotateY(0deg); 
   }
-  figure#spinner-2 img:nth-child(2) { transform: rotateY(120deg); }
-  figure#spinner-2 img:nth-child(3) { transform: rotateY(240deg); }
+  figure#spinner-2 img:nth-child(2) { transform: rotateY(-120deg); }
+  figure#spinner-2 img:nth-child(3) { transform: rotateY(-240deg); }
   div#carousel-2 ~ span { 
     color: #000; 
     margin: 5%; 

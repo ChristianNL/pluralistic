@@ -309,21 +309,8 @@
     <!-- Localisation -->
     <section id="gallery bg-light">
         <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-            </div>
-            <div class="col-lg-9 justify-content-center">
-                <div id="map" style="height: 400px; width: 100%;"></div>
-                
-                <script>
-                    var map = L.map('map').setView([3.861250, 11.524583], 15); // Coordonnées lat, long, niveau de zoom
-
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; OpenStreetMap contributors'
-                    }).addTo(map);
-
-                    var marker = L.marker([3.861250, 11.524583]).addTo(map);
-                    marker.bindPopup("<b>Ma boutique</b>").openPopup();
-                </script>
+            <div class="row justify-content-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.731765842155!2d11.515000011528194!3d3.867614196089942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf8274f72a97%3A0xcb1b96accd187dc2!2sBRICOLUX%20Yaound%C3%A9!5e0!3m2!1sfr!2scm!4v1710336702502!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>

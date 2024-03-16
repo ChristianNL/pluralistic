@@ -26,6 +26,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/sdd.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/comment_form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -181,7 +182,7 @@
 
                 <?php
                     include_once("AdminSpace/db.php");
-                    $result = $conn->query("SELECT nom_service, service_desc from services LIMIT 2");
+                    $result = $conn->query("SELECT nom_service, service_desc from services LIMIT 1");
 
                     // Liste des noms d'icônes à utiliser.
                     $icons = array("icons8-cartouche-laser-96.png", "icons8-encre-96.png", "icons8-engrenage-96.png", "icons8-calques-96.png", "icons8-prestations-de-service-96.png");
@@ -271,12 +272,57 @@
                     $output = "<p></p>";
                 }
 
-                $conn -> close();
                 echo "<div class='row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'>" . $output . "</div>";
             ?>
 
         </div>
     </section>
+
+    <!-- Temoignages -->
+    <section class="py-5 bg-light">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">Temoignages</h2>
+            </div>
+            <?php include_once("testimonials.php") ?>
+        </div>
+    </section>
+
+    <!-- Localisation -->
+    <section class="py-5">
+        <div class="container px-5 my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.731765823789!2d11.517580299999999!3d3.8676141999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf8274f72a97%3A0xcb1b96accd187dc2!2sBRICOLUX%20Yaound%C3%A9!5e0!3m2!1sfr!2scm!4v1710474349595!5m2!1sfr!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-lg-6 col-md-12 comment-bg d-flex flex-column align-items-center">
+                    <div class="comment_card">
+                        <span class="comment_title">Laisser un commentaire/avis</span>
+                        <form class="comment_form" method="post" action="comment_form.php">
+                            <div class="comment_form_group">
+                                <input placeholder="" type="text" id="nom" name="nom" required="required">
+                                <label for="nom">Votre nom</label>
+                            </div>
+                            <div class="comment_form_group">
+                                <input placeholder="" type="text" id="structure" name="structure" required="required">
+                                <label for="structure">Votre Structure/Entreprise</label>
+                            </div>
+                            <div class="comment_form_group">
+                                <input placeholder="" type="number" id="etoiles" name="etoiles" min="0" max="5" step="1" required="required">
+                                <label for="etoiles">Nombre d'étoiles (de 1 à 5)</label>
+                            </div>
+                            <div class="comment_form_group">
+                                <textarea placeholder="" id="comment" name="comment" rows="5" required="required"></textarea>
+                                <label for="comment">Votre commentaire</label>
+                            </div>
+                            <button type="submit">Commenter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Footer-->
     <footer class="site-footer my-bg-green">

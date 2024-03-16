@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     if ($username != "" && $password != "") {
-        $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
+        $stmt = $conn->prepare("SELECT * FROM administrateurs WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();

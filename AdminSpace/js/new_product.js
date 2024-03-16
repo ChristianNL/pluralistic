@@ -8,17 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        renameImageWithProductName();
         // Créer un objet FormData pour envoyer les données au serveur
         var formData = new FormData(productForm);
 
         // Effectuer une requête AJAX pour soumettre le formulaire
         var req = new XMLHttpRequest();
-        req.open("POST", "save_product.php", true);
+        req.open("POST", "new_product.php", true);
         req.onload = function () {
             if (req.status === 200) {
                 // Afficher la réponse du serveur
-                alert(req.responseText);
+                alert("Ce produit a bien ete enregistre");
  
                 // Rediriger vers la page précédente après l'enregistrement
                 window.location.href = document.referrer;
@@ -109,16 +108,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         console.log('success');
         return isValid;
-    }
-
-    // Fonction pour renommer le fichier image avec le nom du produit
-    function renameImageWithProductName() {
-        var productNameInput = document.getElementById("productName");
-        var productImageInput = document.getElementById("productImage");
-
-        // Renommage du fichier avec le nom du produit
-        var fileName = productNameInput.value.replace(/\s+/g, '_').toLowerCase();
-        productImageInput.files[0].name = fileName + getFileExtension(productImageInput.files[0].name);
     }
 
     // Fonction pour obtenir l'extension du fichier

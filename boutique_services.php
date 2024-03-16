@@ -115,46 +115,50 @@
 
                 <?php
                     include_once("AdminSpace/db.php");
-                    $result = $conn->query("SELECT nom_service, service_desc from services");
+                    try {
+                        $result = $conn->query("SELECT nom_service, service_desc from services");
 
-                    // Liste des noms d'icônes à utiliser.
-                    $icons = array("icons8-cartouche-laser-96.png", "icons8-encre-96.png", "icons8-engrenage-96.png", "icons8-calques-96.png", "icons8-prestations-de-service-96.png");
+                        // Liste des noms d'icônes à utiliser.
+                        $icons = array("icons8-cartouche-laser-96.png", "icons8-encre-96.png", "icons8-engrenage-96.png", "icons8-calques-96.png", "icons8-prestations-de-service-96.png");
 
-                    // Variable pour stocker la sortie HTML générée.
-                    $output = "";
-                    $whatsappNumber = "+237696637420";
-                    $currentIcon = 0;
+                        // Variable pour stocker la sortie HTML générée.
+                        $output = "";
+                        $whatsappNumber = "+237696637420";
+                        $currentIcon = 0;
 
-                    if ($result) {
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                // Bloc HTML pour chaque service
-                                $serviceName = $row['nom_service'];
-                                $serviceDesc = $row['service_desc'];
-                                // Sélectionne le nom d'icône à utiliser pour ce service.
-                                $iconName = $icons[$currentIcon];
-                                $currentIcon = ($currentIcon + 1) % count($icons); // Incrémente et boucle dans la liste des icônes
+                        if ($result) {
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    // Bloc HTML pour chaque service
+                                    $serviceName = $row['nom_service'];
+                                    $serviceDesc = $row['service_desc'];
+                                    // Sélectionne le nom d'icône à utiliser pour ce service.
+                                    $iconName = $icons[$currentIcon];
+                                    $currentIcon = ($currentIcon + 1) % count($icons); // Incrémente et boucle dans la liste des icônes
 
-                                $output .= "<div class='col-lg-4'>";
-                                $output .= "<div class='features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3'>";
-                                $output .= "<div class='features-icons-icon d-flex'><img src='assets/".$iconName."' alt='icon'></div>";
-                                $output .= "<h3>".$serviceName."</h3>";
-                                $output .= "<p class='lead mb-0'>".$serviceDesc."</p>";
-                                $output .= "<a class='text-decoration-none' href='whatsapp://send?phone=".$whatsappNumber."&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20"
-                                    .$serviceName.".%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F' target='_blank'>En savoir plus <i class='bi bi-arrow-right'></i></a>";
-                                $output .= "</div></div>";
+                                    $output .= "<div class='col-lg-4'>";
+                                    $output .= "<div class='features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3'>";
+                                    $output .= "<div class='features-icons-icon d-flex'><img src='assets/".$iconName."' alt='icon'></div>";
+                                    $output .= "<h3>".$serviceName."</h3>";
+                                    $output .= "<p class='lead mb-0'>".$serviceDesc."</p>";
+                                    $output .= "<a class='text-decoration-none' href='whatsapp://send?phone=".$whatsappNumber."&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20"
+                                        .$serviceName.".%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F' target='_blank'>En savoir plus <i class='bi bi-arrow-right'></i></a>";
+                                    $output .= "</div></div>";
+                                }
+                            } else {
+                                $output = "<p></p>";
                             }
                         } else {
                             $output = "<p></p>";
                         }
-                    } else {
-                        $output = "<p></p>";
+
+                        $conn->close();
+
+                        // Ajouter toutes les div avec classe "col-lg-4" après les deux premiers blocs de services.
+                        echo $output;
+                    } catch (Exception $e) {
+                        echo"";
                     }
-
-                    $conn->close();
-
-                    // Ajouter toutes les div avec classe "col-lg-4" après les deux premiers blocs de services.
-                    echo $output;
                 ?>
 
             </div>
@@ -164,7 +168,7 @@
     <section class="features-icons text-center">
         <div class="">
             <div class="row justify-content-center">
-                <div class="my-card col-lg-4 col-md-6 mx-3">
+                <div class="my-card col-lg-4 col-md-6 mx-2">
                     <div class="slide-2-card">
                         <img src="assets/images/broderie_1.jpg" class="card-image img-fluid">
                         <p class="slide-2-title">
@@ -191,7 +195,7 @@
                     </div>
                 </div>
 
-                <div class="my-card col-lg-4 col-md-6">
+                <div class="my-card col-lg-4 col-md-6 mx-2">
                     <div class="slide-2-card">
                         <img src="assets/images/serigraphie-1.jpg" class="card-image img-fluid">
                         <p class="slide-2-title">
@@ -207,7 +211,7 @@
                                 la sérigraphie moderne donne vie à vos idées avec éclat et précision.
                             </p>
 
-                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20S%C3%A9rigraphie%20Moderne.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
                                 En savoir plus
                                 <span aria-hidden="true">
                                     →
@@ -218,7 +222,7 @@
                     </div>
                 </div>
 
-                <div class="my-card col-lg-4 col-md-6">
+                <div class="my-card col-lg-4 col-md-6 mx-2">
                     <div class="slide-2-card">
                         <img src="assets/images/confection_textile_1.jpg" class="card-image img-fluid">
                         <p class="slide-2-title">
@@ -234,7 +238,7 @@
                                 de votre marque à travers des vêtements de qualité supérieure.
                             </p>
 
-                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Confection%20Textile.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
                                 En savoir plus
                                 <span aria-hidden="true">
                                     →
@@ -245,7 +249,7 @@
                     </div>
                 </div>
 
-                <div class="my-card col-lg-4 col-md-6">
+                <div class="my-card col-lg-4 col-md-6 mx-2">
                     <div class="slide-2-card">
                         <img src="assets/images/imprimerie_1.jpg" class="card-image img-fluid">
                         <p class="slide-2-title">
@@ -261,7 +265,7 @@
                                 fidèle et professionnelle de vos documents.
                             </p>
 
-                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20de%20Broderie%20Industrielle.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
+                            <a class="card-action" href='whatsapp://send?phone=+237696637420&text=Bonjour%2FBonsoir%2C%20%0Aj%27aimerais%20en%20savoir%20plus%20sur%20votre%20service%20%3A%20d%27Impression%20Offset.%20%0AQuelles%20sont%20les%20modalit%C3%A9s%20%3F'>
                                 En savoir plus
                                 <span aria-hidden="true">
                                     →

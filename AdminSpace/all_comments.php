@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- META Tags for SEO -->
         <meta name="robots" content="noindex, nofollow">
         <meta name="author" content="Pluralistic Communication, MANI Entreprises">
         
-        <title>Pluralistic - Admin Space</title>
+        <title>Pluralistic - Tous les administrateurs</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Pluralistic Dashboard</a>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" title="" type="" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i>.</button>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" type="" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i>.</button>
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>.</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 </li>
             </ul>
         </nav>
@@ -104,7 +103,7 @@
                     </div>
                 </nav>
             </div>
-
+            
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -112,8 +111,57 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Tableau de Bord</li>
                         </ol>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Abonnes
+                            </div>
+                            <div id="abonnes-table" class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Noms</th>
+                                            <th>Structures</th>
+                                            <th>Notes</th>
+                                            <th>Commentaires</th>
+                                            <th>Date d'enregistrement</th>
+                                            <th>Heure d'enregistrement</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Noms</th>
+                                            <th>Structures</th>
+                                            <th>Notes</th>
+                                            <th>Commentaires</th>
+                                            <th>Date d'enregistrement</th>
+                                            <th>Heure d'enregistrement</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>                                    
+                                        <?php
+                                        include_once("db.php");
+
+                                        $result = $conn -> query("SELECT nom, structure, etoiles, date_enregistrement, heure_enregistrement from temoignages");
+                                        if ($result -> num_rows > 0) {
+                                            while ($row = $result -> fetch_assoc()) {
+                                                echo "<tr><td>". $row['nom']. "</td><td>". $row['structure']. "</td><td>". $row['etoiles']. 
+                                                "</td><td>". $row['date_enregistrement']. "</td><td>". $row['heure_enregistrement']. "</td>";
+                                            }
+                                            echo "</table>";
+                                        } else {
+                                            echo "Aucun commentaires pour le moment";
+                                        }
+
+                                        $conn->close();
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </main>
+
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -128,13 +176,11 @@
                 </footer>
             </div>
         </div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        
     </body>
 </html>

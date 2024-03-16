@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
     $nom = $_POST['name'];
     $prenom = $_POST['surname'];
-    $ville = isset($_POST['Ville']);
+    $ville = $_POST['Ville'];
     $mail = $_POST['email'];
     $tel = $_POST['phone'];
     $whatsapp = $_POST['WhatsAppNumber'];

@@ -1,4 +1,7 @@
 <?php
+session_start();
+$session_lifetime = 300; // 30 minutes
+session_set_cookie_params($session_lifetime);
 include_once("db.php");
 
 $error_msg = "";
@@ -16,9 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($row) {
             // Vérifier si le mot de passe est correct
-            if ($password == $row['password']) {
+            if (password_verify($password, $row['password'])) {
+
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['loggedin'] = true;
+
+                // Renouveler la session
+                $_SESSION['LAST_ACTIVITY'] = time();
+
                 echo "Success";
                 header("Location: dashbord.html");
+                exit(); // Arrêter l'exécution du script après la redirection
             } else {
                 $error_msg = "Mot de passe incorrect.";
             }
@@ -29,13 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-?>
 
-<?php
 if ($error_msg != "") {
-    ?>
-    <script>alert("erreur : <?php echo $error_msg; ?>")</script>
-    <?php
+    echo $error_msg;
+    //echo "<script>alert(\"Erreur : $error_msg\");</script>";
     header("Location: ../form_ connexion.html");
+    exit(); // Arrêter l'exécution du script après la redirection
 }
 ?>

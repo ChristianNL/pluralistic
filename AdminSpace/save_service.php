@@ -1,4 +1,5 @@
 <?php
+include("session_control.php");
 include_once 'db.php';
 
 // Vérifier si le formulaire a été soumis

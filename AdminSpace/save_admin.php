@@ -1,4 +1,5 @@
 <?php
+
 // Connexion à la base de données
 include_once("db.php");
 

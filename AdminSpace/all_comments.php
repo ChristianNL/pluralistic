@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+// Définir la durée de validité du cookie de session
+$session_lifetime = 300; //  minutes
+session_set_cookie_params($session_lifetime);
+
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: ../form_ connexion.html"); // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    exit;
+}
+
+// Renouveler la session lors de l'activité de l'utilisateur
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $session_lifetime)) {
+    session_unset();     // Unset toutes les variables de session
+    session_destroy();   // Détruire la session
+    header("Location: ../form_ connexion.html"); // Rediriger vers la page de connexion
+    exit;
+}
+
+$_SESSION['LAST_ACTIVITY'] = time(); // Mettre à jour le temps de dernière activité
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -114,7 +138,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Abonnes
+                                Commentaires
                             </div>
                             <div id="abonnes-table" class="card-body">
                                 <table id="datatablesSimple">
@@ -142,11 +166,11 @@
                                         <?php
                                         include_once("db.php");
 
-                                        $result = $conn -> query("SELECT nom, structure, etoiles, date_enregistrement, heure_enregistrement from temoignages");
+                                        $result = $conn -> query("SELECT nom, structure, etoiles, commentaire, date_enregistrement, heure_enregistrement from temoignages");
                                         if ($result -> num_rows > 0) {
                                             while ($row = $result -> fetch_assoc()) {
-                                                echo "<tr><td>". $row['nom']. "</td><td>". $row['structure']. "</td><td>". $row['etoiles']. 
-                                                "</td><td>". $row['date_enregistrement']. "</td><td>". $row['heure_enregistrement']. "</td>";
+                                                echo "<tr><td>". $row['nom']. "</td><td>". $row['structure']. "</td><td>". $row['etoiles']. " etoiles</td><td>". $row['commentaire'].
+                                                "</td><td>". $row['date_enregistrement']. "</td><td>". $row['heure_enregistrement']. "</td></tr>";
                                             }
                                             echo "</table>";
                                         } else {

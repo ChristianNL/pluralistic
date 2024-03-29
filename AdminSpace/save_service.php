@@ -1,6 +1,7 @@
 <?php
+global $conn;
 include("session_control.php");
-include_once 'db.php';
+include_once("db.php");
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

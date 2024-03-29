@@ -1,4 +1,5 @@
 <?php
+global $conn;
 session_start();
 $session_lifetime = 300; // 30 minutes
 session_set_cookie_params($session_lifetime);

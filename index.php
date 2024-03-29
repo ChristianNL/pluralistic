@@ -55,10 +55,6 @@
                         <i class="me-1"></i>
                         S'abonner
                     </a>
-                    <a class="btn btn-outline-dark d-sm-flex justify-content-sm-center" type="submit" href="form_ connexion.html">
-                        <i class="me-1"></i>
-                        Se connecter
-                    </a>
                 </form>
             </div>
         </div>
@@ -74,7 +70,6 @@
                         <p class="lead text-white-50 mb-4">Vous propose ses services pour particulier et entreprises. Nous vous présentons également nos produits.</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                             <a class="btn btn-primary btn-lg px-4 me-sm-3" href="form_ inscription.html">S'abonner</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="form_ connexion.html">Se connecter</a>
                         </div>
                     </div>
                 </div>
@@ -293,7 +288,7 @@
         <div class="container px-5 my-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.731765823789!2d11.517580299999999!3d3.8676141999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf8274f72a97%3A0xcb1b96accd187dc2!2sBRICOLUX%20Yaound%C3%A9!5e0!3m2!1sfr!2scm!4v1710474349595!5m2!1sfr!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3980.730084217864!2d11.5189444!3d3.8679721999999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwNTInMDQuNyJOIDExwrAzMScwOC4yIkU!5e0!3m2!1sfr!2scm!4v1711704625324!5m2!1sfr!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-lg-6 col-md-12 comment-bg d-flex flex-column align-items-center">
                     <div class="comment_card">

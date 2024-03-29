@@ -1,4 +1,5 @@
 <?php
+global $conn;
 include("session_control.php");
 include_once("db.php");
 

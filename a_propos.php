@@ -58,10 +58,6 @@
                         <i class="me-1"></i>
                         S'abonner
                     </a>
-                    <a class="btn btn-outline-dark d-sm-flex justify-content-sm-center" type="submit" href="form_ connexion.html">
-                        <i class="me-1"></i>
-                        Se Connecter
-                    </a>
                 </form>
             </div>
         </div>
@@ -312,7 +308,7 @@
         <div class="container px-5">
             <div class="row justify-content-center comment-bg">
                 <div class="col-lg-6 col-md-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.731765823789!2d11.517580299999999!3d3.8676141999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf8274f72a97%3A0xcb1b96accd187dc2!2sBRICOLUX%20Yaound%C3%A9!5e0!3m2!1sfr!2scm!4v1710474349595!5m2!1sfr!2scm" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3980.730084217864!2d11.5189444!3d3.8679721999999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwNTInMDQuNyJOIDExwrAzMScwOC4yIkU!5e0!3m2!1sfr!2scm!4v1711704625324!5m2!1sfr!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-lg-6 col-md-12 comment-round d-flex flex-column align-items-center">
                     <div class="comment_card">
@@ -395,6 +391,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <script src="js/gallery.js"></script>
 </body>
 </html>

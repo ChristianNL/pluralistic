@@ -1,6 +1,6 @@
 <?php
-
-// Connexion à la base de données
+global $conn;
+include("session_control.php");
 include_once("db.php");
 
 // Récupération des données du formulaire

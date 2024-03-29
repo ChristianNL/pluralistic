@@ -1,6 +1,7 @@
 <?php
+global $conn;
 include("session_control.php");
-include("db.php");
+include_once("db.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize the data

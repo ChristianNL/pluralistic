@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function redirectToDashboard() {
-        window.location.href = "AdminSpace/dashbord.html";
+        window.location.href = "../AdminSpace/dashboard.html";
     }
 
 });

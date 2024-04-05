@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- META Tags for SEO -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Pluralistic Communication, MANI Entreprises">
+
+    <title>Dashboard - Add Video</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="css/new_poduct.css">
+</head>
+<body>
+
+<div id="form-main">
+    <div id="form-div">
+        <form class="form" id="productForm" action="save_video.php" method="post" enctype="multipart/form-data">
+            <h2>Ajouter une nouvelle réalisation</h2>
+
+            <p class="name">
+                <input name="videoTitle" type="text" class="validate[required] feedback-input" placeholder="Titre" id="videoTitle" required />
+                <span id="realisationTitle-error"></span>
+            </p>
+
+            <p class="video">
+                <input name="videoName" type="file" accept="video/*" class="validate[required]" id="videoName" required />
+                <span id="realisationVideo-error"></span>
+            </p>
+
+            <div class="submit">
+                <input type="submit" value="Ajouter la réalisation" id="button-blue"/>
+                <div class="ease"></div>
+            </div>
+
+            <a href="all_realisation.php" class="back-button">Retour</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

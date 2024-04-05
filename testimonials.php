@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base de données
+global $conn;
 include_once("AdminSpace/db.php");
 echo '<link rel="stylesheet" href="css/testimonial_2.css"/>';
 

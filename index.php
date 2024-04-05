@@ -86,10 +86,11 @@
             <div class="row g-0">
                 <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('assets/images/plural-1.jpg')"></div>
                 <div class="col-lg-5 order-lg-1 showcase-text">
-                    <p class="leader mb-0"><strong>Pluralistic Communication</strong> est une entreprise dynamique spécialisée dans l'impression, la 
-                        sérigraphie, la broderie industrielle, le commerce général et la prestation de services. 
-                        Notre engagement envers l'excellence et la créativité nous distingue, offrant à nos
-                         clients des solutions sur mesure pour leurs besoins d'impression et de communication.</p>
+                    <p class="leader mb-0"><strong>Pluralistic Communication</strong> est une entreprise dynamique spécialisée
+                        dans l'impression, la sérigraphie, la broderie industrielle, le commerce général et la prestation de
+                        services. Notre engagement envers l'excellence et la créativité nous distingue, offrant à nos
+                         clients des solutions sur mesure pour leurs besoins d'impression et de communication.
+                    </p>
                 </div>
             </div>
             </div>
@@ -176,6 +177,7 @@
                 </div>
 
                 <?php
+                    global $conn;
                     include_once("AdminSpace/db.php");
                     $result = $conn->query("SELECT nom_service, service_desc from services LIMIT 1");
 

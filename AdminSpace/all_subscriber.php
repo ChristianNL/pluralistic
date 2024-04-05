@@ -31,7 +31,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // Mettre à jour le temps de dernière act
         <meta name="robots" content="noindex, nofollow">
         <meta name="author" content="Pluralistic Communication, MANI Entreprises">
         
-        <title>Pluralistic - Abonnes</title>
+        <title>Dashboard - Tous les Abonnes</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -41,7 +41,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // Mettre à jour le temps de dernière act
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dashbord.html">Pluralistic Dashboard</a>
+            <a class="navbar-brand ps-3" href="dashboard.html">Pluralistic Dashboard</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" type="" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -65,7 +65,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // Mettre à jour le temps de dernière act
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Dashboard</div>
-                            <a class="nav-link" href="dashbord.html">
+                            <a class="nav-link" href="dashboard.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Acceuil
                             </a>
@@ -81,6 +81,19 @@ $_SESSION['LAST_ACTIVITY'] = time(); // Mettre à jour le temps de dernière act
                                     <a class="nav-link" href="all_admin.php">Tous les administrateurs</a>
                                 </nav>
                             </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseVideo" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-video"></i></div>
+                                Video
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseVideo" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="new_video.html">Nouvelle video</a>
+                                    <a class="nav-link" href="all_video.php">Toutes les videos</a>
+                                </nav>
+                            </div>
+
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Boutique
@@ -110,6 +123,71 @@ $_SESSION['LAST_ACTIVITY'] = time(); // Mettre à jour le temps de dernière act
                                     </div>
                                 </nav>
                             </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseImage" aria-expanded="false" aria-controls="collapseImage">
+                                <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
+                                Image
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseImage" aria-labelledby="headingImage" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionImage">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRealisation" aria-expanded="false" aria-controls="collapseRealisation">
+                                        Réalisation
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="collapseRealisation" aria-labelledby="headingRealisation" data-bs-parent="#sidenavAccordionImage">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="all_realisation.php">Toutes les Réalisations</a>
+                                            <a class="nav-link" href="new_realisation.html">Nouvelle Réalisation</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTeam" aria-expanded="false" aria-controls="collapseTeam">
+                                        Team
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="collapseTeam" aria-labelledby="headingTeam" data-bs-parent="#sidenavAccordionImage">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="all_team_members.php">Tous les Membres</a>
+                                            <a class="nav-link" href="new_team_member.html">Nouveau Membre</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseContenus" aria-expanded="false" aria-controls="collapseContenus">
+                                <div class="sb-nav-link-icon"><i class="fas fa-th"></i></div>
+                                Contenus
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseContenus" aria-labelledby="headingContenus" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionContenus">
+                                    <!-- Section Discover -->
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDiscover" aria-expanded="false" aria-controls="collapseRealisation">
+                                        Decouvrez qui nous sommes
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="collapseDiscover" aria-labelledby="headingRealisation" data-bs-parent="#sidenavAccordionContenus">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="all_intros.php">Toutes les introductions</a>
+                                            <a class="nav-link" href="new_introduction.html">Nouvel Introduction</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Section Why Us -->
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWhyUs" aria-expanded="false" aria-controls="collapseTeam">
+                                        Pourquoi nous choisir
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="collapseWhyUs" aria-labelledby="headingTeam" data-bs-parent="#sidenavAccordionContenus">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="all_raisons.php">Toutes les raisons</a>
+                                            <a class="nav-link" href="new_raison.html">Nouvelle raison</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+
+
+
                             <div class="sb-sidenav-menu-heading">Extensions</div>
                             <a class="nav-link" href="all_comments.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- META Tags for SEO -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Pluralistic Communication, MANI Entreprises">
+
+    <title>Dashboard - Add Introduction</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="css/new_poduct.css">
+</head>
+<body>
+
+<div id="form-main">
+    <div id="form-div">
+        <form class="form" id="productForm" action="save_intro.php" method="post" enctype="multipart/form-data">
+            <h2>Ajouter une nouvelle introduction</h2>
+
+            <p class="name">
+                <input name="IntroBold" type="text" class="validate[required, length[5, 50]] feedback-input" placeholder="Debut en gras" id="IntroBold" required />
+                <span id="productName-error"></span>
+            </p>
+
+            <p class="image">
+                <input name="introImage" type="file" accept="image/*" class="validate[required]" id="introImage" required />
+                <span id="productImage-error"></span>
+            </p>
+
+            <p class="description">
+                <textarea name="introText" class="validate[required,length[50,350]] feedback-input" id="introText" placeholder="Texte d'introduction" required></textarea>
+                <span id="productDescription-error"></span>
+            </p>
+
+            <div class="submit">
+                <input type="submit" value="Ajouter" id="button-blue"/>
+                <div class="ease"></div>
+            </div>
+
+            <a href="all_product.php" class="back-button">Retour</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

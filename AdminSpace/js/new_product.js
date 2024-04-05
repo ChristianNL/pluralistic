@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Effectuer une requête AJAX pour soumettre le formulaire
         var req = new XMLHttpRequest();
-        req.open("POST", "new_product.php", true);
+        req.open("POST", "save_product.php", true);
         req.onload = function () {
             if (req.status === 200) {
                 // Afficher la réponse du serveur

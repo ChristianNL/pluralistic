@@ -84,6 +84,9 @@
                 <h2 class="fw-bolder">Découvrez qui nous sommes</h2>
             </div>
             <div class="row g-0">
+
+                <?php include_once("intro.php"); ?>
+
                 <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('images/plural-03.jpg')"></div>
                 <div class="col-lg-5 order-lg-1 showcase-text">
                     <p class="leader mb-0 fs-5"><strong>Pluralistic Communication</strong> est une entreprise dynamique spécialisée dans l'impression, la 
@@ -92,43 +95,19 @@
                          clients des solutions sur mesure pour leurs besoins d'impression et de communication.</p>
                 </div>
             </div>
-            </div>
         </div>
     </section>
 
+    <?php include_once("videoPlay.php"); ?>
+
     <!-- Pourquoi nous choisir-->
     <section class="py-5 border-bottom" id="features">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Pourquoi nous choisir</h2>
-            </div>
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h2 class="h4 fw-bolder">La qualité de nos produits et services</h2>
-                    <p class="fs-5">Nous sommes une boutique qui s'efforce de fournir à nos clients des produits et services de la plus haute qualité. Nous travaillons avec des fournisseurs et des partenaires fiables pour nous assurer que nos produits sont de la meilleure qualité possible.</p>
-                    <a class="text-decoration-none fs-5" href="boutique_service.php">
-                        Explorez nos services
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h2 class="h4 fw-bolder">Rapport qualité-prix</h2>
-                    <p class="fs-5"> Nous sommes conscients que les clients cherchent toujours des produits et services abordables sans compromettre la qualité. Nous offrons également des promotions régulières pour les clients réguliers et fidèles.</p>
-                    <a class="text-decoration-none fs-5" href="boutique_produits.php">
-                        Explorez nos produits
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="col-lg-4">
-                    <h2 class="h4 fw-bolder">Notre localisation</h2>
-                    <p class="fs-5">Nous sommes situés dans un emplacement idéal, facile d'accès et à proximité de nombreux endroits populaires. Nous sommes disponibles et accessibles pour nos clients. Nous sommes transparents dans nos politiques de prix et de retour. Nous fournissons des informations claires et détaillées sur les produits que nous vendons.</p>
-                    <a class="text-decoration-none fs-5" href="a_propos.php">
-                        A Propos de nous
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Pourquoi nous choisir</h2>
         </div>
+
+        <?php include_once("whyUs.php"); ?>
+
     </section>
 
     <!-- Notre Equipe -->
@@ -138,73 +117,10 @@
                 <h2 class="fw-bolder">Notre Equipe</h2>
             </div>
 
-            <?php
-                $folder = "images/team"; // Nom du dossier à parcourir
-                $files = scandir($folder); // Liste de fichiers dans le dossier
-                $output = ""; // Variable pour stocker la sortie HTML
-                $maxHeight = 300; //hauteur d'une image
-                $maxWidth = 300; // largeur d'une image
+            <?php include_once("team_member.php"); ?>
 
-                foreach ($files as $file) {
-                    if (in_array($file, array(".", ".."))) continue; // Ignore les fichiers spéciaux "." et ".."
-                    $imgPath = $folder . "/" . $file;
-                    $imageSize = getimagesize($imgPath);
-                    $imageWidth = $imageSize[0];
-                    $imageHeight = $imageSize[1];
-
-                    // calculer la hauter max de l'image
-                    if ($imageHeight > $maxHeight) {
-                        $ratio = min($maxWidth / $imageWidth , $maxHeight / $imageHeight);
-                        $newWidth = round($imageWidth * $ratio);
-                        $newHeight = round($imageHeight * $ratio);
-                    } else {
-                        $newHeight = $imageHeight;
-                    }
-
-                    $output .= '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">';
-                    $output .= '<div class="img-wrapper">';
-                    $output .= '<img src="' . $imgPath . '" class="img-responsive" alt="image" style="height: ' . $newHeight . 'px;">';
-                    $output .= '<div class="img-overlay">';
-                    $output .= '<i class="fa-solid fa-plus-circle" aria-hidden="true"></i>';
-                    $output .= '</div>';
-                    $output .= '</div>';
-                    $output .= '</div>';
-                }
-
-                echo "<div class='container px-5 my-5'><div class='row gx-5'>" .$output ."</div></div>";
-            ?>
         </div>
         <hr class="hr">
-    </section>
-    
-    <!-- Gallery -->
-    <section id="gallery">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Gallery</h2>
-            </div>
-
-            <?php
-                $folder = "images/gallery"; // Nom du dossier à parcourir
-                $files = scandir($folder); // Liste de fichiers dans le dossier
-                $output = ""; // Variable pour stocker la sortie HTML générée
-
-                foreach ($files as $file) {
-                    if (in_array($file, array(".", ".."))) continue; // Ignore les fichiers spéciaux "." et ".."
-                    $imgPath = $folder . "/" . $file;
-                    $output .= '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">';
-                    $output .= '<div class="img-wrapper">';
-                    $output .= '<img src="' . $imgPath . '" class="img-responsive" alt="">';
-                    $output .= '<div class="img-overlay">';
-                    $output .= '<i class="fa-solid fa-plus-circle" aria-hidden="true"></i>';
-                    $output .= '</div>';
-                    $output .= '</div>';
-                    $output .= '</div>';
-                }
-
-                echo "<div class='container px-5 my-5'><div class='row gx-5'>" .$output ."</div></div>";
-            ?>
-        </div>
     </section>
 
     <!-- Realisation -->
@@ -214,92 +130,8 @@
                 <h2 class="fw-bolder">Nos Realisations</h2>
             </div>
 
-            <?php
-                $folder = "images/realisation"; // Nom du dossier à parcourir
-                $files = scandir($folder); // Liste de fichiers dans le dossier
-                $numPerPage = 12; // Nombre d'éléments par page
-                $numPages = ceil(count($files) / $numPerPage); // Nombre total de pages
-                $page = isset($_GET["page"]) ? $_GET["page"] : 1; // Numéro de la page actuelle
-                $startIndex = ($page - 1) * $numPerPage; // Index de la première image à afficher
-                $endIndex = $startIndex + $numPerPage - 1; // Index de la dernière image à afficher
-                $output = ""; // Variable pour stocker la sortie HTML générée
-                $maxHeight = 300; //hauteur d'une image
-                $maxWidth = 300; // largeur d'une image
+            <?php include_once("realisation.php"); ?>
 
-                for ($i = $startIndex; $i <= $endIndex && $i < count($files); $i++) {
-                    $file = $files[$i];
-                    if (in_array($file, array(".", ".."))) continue; // Ignore les fichiers spéciaux "." et ".."
-                    $imgPath = $folder . "/" . $file;
-                    $imageSize = getimagesize($imgPath);
-                    $imageWidth = $imageSize[0];
-                    $imageHeight = $imageSize[1];
-
-                    // calculer la hauter max de l'image
-                    if ($imageHeight > $maxHeight) {
-                        $ratio = min($maxWidth / $imageWidth , $maxHeight / $imageHeight);
-                        $newWidth = round($imageWidth * $ratio);
-                        $newHeight = round($imageHeight * $ratio);
-                    } else {
-                        $newHeight = $imageHeight;
-                    }
-
-                    $output .= '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">';
-                    $output .= '<div class="img-wrapper">';
-                    $output .= '<img src="' . $imgPath . '" class="img-responsive" alt="image" style="height: ' . $newHeight . 'px;">';
-                    $output .= '<div class="img-overlay">';
-                    $output .= '<i class="fa-solid fa-plus-circle" aria-hidden="true"></i>';
-                    $output .= '</div>';
-                    $output .= '</div>';
-                    $output .= '</div>';
-                }
-
-                // Affiche les boutons de pagination
-                /*if ($numPages > 1) {
-                    $pagination = '<ul class="pagination pagination-lg mb-2 justify-content-center lead">';
-                    for ($p = 1; $p <= $numPages; $p++) {
-                        $activeClass = ($p == $page) ? "active" : "";
-                        $pagination .= '<li class="page-item ' . $activeClass . '"><a class="page-link" href="?page=' . $p . '">' . $p . '</a></li>';
-                    }
-                    $pagination .= '</ul>';
-                  $output .= '<div class="col-12">' . $pagination . '</div>';
-                }*/
-
-                if ($numPages > 1) {
-                    $screenClass = (isset($_GET['screen']) && $_GET['screen'] == 'mobile') ? 'mobile' : 'desktop';
-                    $paginationClass = 'pagination pagination-lg mb-2 mt-5 justify-content-center lead' . $screenClass;
-                    $pagination = '<ul class="' . $paginationClass . '">';
-                
-                    for ($p = 1; $p <= $numPages; $p++) {
-                        $activeClass = ($p == $page) ? "active" : "";
-                        $pagination .= '<li class="page-item ' . $activeClass . '"><a class="page-link" href="?page=' . $p . '">' . $p . '</a></li>';
-                    }
-                
-                    if ($screenClass == 'mobile') {
-                        // Ajouter des boutons de navigation pour les écrans mobiles
-                        $prevLink = ($page > 1) ? '?page=' . ($page - 1) : '';
-                        $nextLink = ($page < $numPages) ? '?page=' . ($page + 1) : '';
-                        $firstLink = ($page > 2) ? '?page=1' : '';
-                        $lastLink = ($page < $numPages - 1) ? '?page=' . $numPages : '';
-                        $pagination = '<ul class="' . $paginationClass . '">';
-                        $pagination .= '<li class="page-item"><a class="page-link" href="' . $firstLink . '">&lt;&lt;</a></li>';
-                        $pagination .= '<li class="page-item"><a class="page-link" href="' . $prevLink . '">&lt;</a></li>';
-                        $pagination .= '<li class="page-item active"><a class="page-link" href="#">' . $page . '</a></li>';
-                        if ($page > 2) {
-                            $pagination .= '<li class="page-item ellipsis"><span>&hellip;</span></li>';
-                        }
-                        if ($page < $numPages - 1) {
-                            $pagination .= '<li class="page-item ellipsis"><span>&hellip;</span></li>';
-                        }
-                        $pagination .= '<li class="page-item"><a class="page-link" href="' . $nextLink . '">&gt;</a></li>';
-                        $pagination .= '<li class="page-item"><a class="page-link" href="' . $lastLink . '">&gt;&gt;</a></li>';
-                        $pagination .= '</ul>';
-                    }
-                
-                    $output .= '<div class="col-12">' . $pagination . '</div>';
-                }
-
-                echo '<div class="container px-5 my-5"><div class="row gx-5">' . $output . '</div></div>';
-                ?>
         </div>
     </section>
 

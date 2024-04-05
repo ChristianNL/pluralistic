@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- META Tags for SEO -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Pluralistic Communication, MANI Entreprises">
+
+    <title>Dashboard - Add Realisation</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="css/new_poduct.css">
+</head>
+<body>
+
+    <div id="form-main">
+    <div id="form-div">
+        <form class="form" id="productForm" action="save_realisation.php" method="post" enctype="multipart/form-data">
+            <h2>Ajouter une nouvelle realisation</h2>
+
+            <p class="name">
+                <input name="realisationTitle" type="text" class="validate[required] feedback-input" placeholder="Titre" id="productName" required />
+                <span id="productName-error"></span>
+            </p>
+
+            <p class="image">
+                <input name="realisationImage" type="file" accept="image/*" class="validate[required]" id="realisationImage" required />
+                <span id="productImage-error"></span>
+            </p>
+
+            <p class="description">
+                <textarea name="realisationDescription" class="validate[required,length[0,100]] feedback-input" id="realisationDescription" placeholder="Description" required></textarea>
+                <span id="productDescription-error"></span>
+            </p>
+
+            <div class="submit">
+                <input type="submit" value="Ajouter la realisation" id="button-blue"/>
+                <div class="ease"></div>
+            </div>
+
+            <a href="all_realisation.php" class="back-button">Retour</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

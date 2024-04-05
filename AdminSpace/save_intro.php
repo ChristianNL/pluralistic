@@ -5,16 +5,15 @@ include_once("db.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize the data
-    $productName = htmlspecialchars($_POST["productName"]);
-    $productPrice = floatval($_POST["productPrice"]);
-    $productDescription = htmlspecialchars($_POST["productDescription"]);
+    $productName = htmlspecialchars($_POST["IntroBold"]);
+    $productDescription = htmlspecialchars($_POST["introText"]);
 
-    if (isset($_FILES["productImage"])) {
-        $targetFolder = "Image/Produits/";
+    if (isset($_FILES["introImage"])) {
+        $targetFolder = "Image/Others/";
 
         // Vérification de l'extension du fichier
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'heif', 'heic'];
-        $filename = $_FILES["productImage"]["name"];
+        $filename = $_FILES["introImage"]["name"];
         $fileExtension = pathinfo($filename, PATHINFO_EXTENSION);
 
         if (!in_array($fileExtension, $allowedExtensions)) {
@@ -26,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mkdir($targetFolder, 0777, true);
         }
 
-        $imageFileType = $_FILES["productImage"]["type"];
+        $imageFileType = $_FILES["introImage"]["type"];
         $allowedTypesRegex = '/(\.jpg|\.jpeg|\.png|\.gif|\.heif|\.heic)$/i';
 
         if (preg_match($allowedTypesRegex, $filename)) {
-            $uniqueFileName = uniqid() . '_' . basename($_FILES["productImage"]["name"]);
+            $uniqueFileName = uniqid() . '_' . basename($_FILES["introImage"]["name"]);
             $targetFile = $targetFolder . $uniqueFileName;
-            move_uploaded_file($_FILES["productImage"]["tmp_name"], $targetFile);
+            move_uploaded_file($_FILES["introImage"]["tmp_name"], $targetFile);
             $productImagePath = $targetFile;
         } else {
             die("Type de fichier non autorisé. Seuls les fichiers JPG, JPEG, PNG, GIF, HEIF et HEIC sont autorisés.");
@@ -40,14 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert data into the database using prepared statements
-    $stmt = $conn->prepare("INSERT INTO produits (nom_produit, prix_produit, image_path, produit_desc) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("sdss", $productName, $productPrice, $productImagePath, $productDescription);
+    $stmt = $conn->prepare("INSERT INTO intro (bold_part, image_path, intro_text) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $productName, $productImagePath, $productDescription);
 
     if ($stmt->execute()) {
-        echo "Image enregistré avec succès.";
-        header("Location: all_product.php");
+        echo "Introduction enregistré avec succès.";
+        header("Location: all_intros.php");
     } else {
-        echo "Erreur lors de l'enregistrement du produit : " . $stmt->error;
+        echo "Erreur lors de l'enregistrement de l'introduction : " . $stmt->error;
     }
 
     $stmt->close();

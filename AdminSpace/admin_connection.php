@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['LAST_ACTIVITY'] = time();
 
                 echo "Success";
-                header("Location: dashbord.html");
+                header("Location: dashboard.html");
                 exit(); // Arrêter l'exécution du script après la redirection
             } else {
                 $error_msg = "Mot de passe incorrect.";

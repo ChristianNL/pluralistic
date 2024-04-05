@@ -84,55 +84,21 @@
                 <h2 class="fw-bolder">Découvrez qui nous sommes</h2>
             </div>
             <div class="row g-0">
-                <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('assets/images/plural-1.jpg')"></div>
-                <div class="col-lg-5 order-lg-1 showcase-text">
-                    <p class="leader mb-0"><strong>Pluralistic Communication</strong> est une entreprise dynamique spécialisée
-                        dans l'impression, la sérigraphie, la broderie industrielle, le commerce général et la prestation de
-                        services. Notre engagement envers l'excellence et la créativité nous distingue, offrant à nos
-                         clients des solutions sur mesure pour leurs besoins d'impression et de communication.
-                    </p>
-                </div>
-            </div>
+
+                <?php include_once("intro.php"); ?>
+
             </div>
         </div>
     </section>
+
+    <?php include_once("videoPlay.php"); ?>
     
     <!-- Pourquoi nous choisir-->
     <section class="py-5 border-bottom" id="features">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Pourquoi nous choisir</h2>
-            </div>
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
-                    <h2 class="h4 fw-bolder">La qualité de nos produits et services</h2>
-                    <p>Nous sommes une boutique qui s'efforce de fournir à nos clients des produits et services de la plus haute qualité. Nous travaillons avec des fournisseurs et des partenaires fiables pour nous assurer que nos produits sont de la meilleure qualité possible.</p>
-                    <a class="text-decoration-none" href="boutique_services.php">
-                        Explorez nos services
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
-                    <h2 class="h4 fw-bolder">Rapport qualité-prix</h2>
-                    <p> Nous sommes conscients que les clients cherchent toujours des produits et services abordables sans compromettre la qualité. Nous offrons également des promotions régulières pour les clients réguliers et fidèles.</p>
-                    <a class="text-decoration-none" href="boutique_produits.php">
-                        Explorez nos produits
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
-                    <h2 class="h4 fw-bolder">Notre localisation</h2>
-                    <p>Nous sommes situés dans un emplacement idéal, facile d'accès et à proximité de nombreux endroits populaires. Nous sommes disponibles et accessibles pour nos clients. Nous sommes transparents dans nos politiques de prix et de retour. Nous fournissons des informations claires et détaillées sur les produits que nous vendons.</p>
-                    <a class="text-decoration-none" href="a_propos.php">
-                        A Propos de nous
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Pourquoi nous choisir</h2>
         </div>
+        <?php include_once("whyUs.php"); ?>
     </section>
 
     <!-- Nos services-->

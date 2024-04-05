@@ -87,13 +87,6 @@
 
                 <?php include_once("intro.php"); ?>
 
-                <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('images/plural-03.jpg')"></div>
-                <div class="col-lg-5 order-lg-1 showcase-text">
-                    <p class="leader mb-0 fs-5"><strong>Pluralistic Communication</strong> est une entreprise dynamique spécialisée dans l'impression, la 
-                        sérigraphie, la broderie industrielle, le commerce général et la prestation de services. 
-                        Notre engagement envers l'excellence et la créativité nous distingue, offrant à nos
-                         clients des solutions sur mesure pour leurs besoins d'impression et de communication.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -105,9 +98,7 @@
         <div class="text-center mb-5">
             <h2 class="fw-bolder">Pourquoi nous choisir</h2>
         </div>
-
         <?php include_once("whyUs.php"); ?>
-
     </section>
 
     <!-- Notre Equipe -->

@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
         $output .= '</figure>';
     }
 } else {
-    $output = "Aucun témoignage trouvé.";
+    $output = "<strong style='font-size: 20px;'>Aucun témoignages pour le moment.</strong>";
 }
 
 $conn->close();

@@ -19,17 +19,17 @@
                 <h2>Ajouter un nouveau produit</h2>
                 
                 <p class="name">
-                    <input name="productName" type="text" class="validate[required] feedback-input" placeholder="Nom du produit" id="productName" />
+                    <input name="productName" type="text" class="validate[required] feedback-input" placeholder="Nom du produit" id="productName" required />
                     <span id="productName-error"></span>
                 </p>
 
                 <p class="price">
-                    <input name="productPrice" type="text" class="validate[required,custom[number]] feedback-input" placeholder="Prix" id="productPrice" />
+                    <input name="productPrice" type="text" class="validate[required,custom[number]] feedback-input" placeholder="Prix" id="productPrice" required />
                     <span id="productPrice-error"></span>
                 </p>
 
                 <p class="image">
-                    <input name="productImage" type="file" accept="image/*" class="validate[required]" id="productImage" />
+                    <input name="productImage" type="file" accept="image/*" class="validate[required]" id="productImage" required/>
                     <span id="productImage-error"></span>
                 </p>
 
@@ -48,6 +48,5 @@
         </div>
     </div>
 
-    <script src="js/new_product.js"></script>
 </body>
 </html>

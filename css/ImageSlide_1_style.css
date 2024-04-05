@@ -61,7 +61,7 @@
     left: 100px;
     width: 300px;
     text-align: left;
-    color: rgba(5, 94, 13, 0.87);
+    color: rgba(4, 4, 98, 0.98);
     transform: translate(0, -50%);
     font-family: system-ui;
     display: none;
@@ -82,7 +82,7 @@
 .realisation-slide-1-img-content .realisation-slide-1-img-des {
     margin-top: 10px;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 25px;
     opacity: 0;
     animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
